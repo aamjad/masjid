@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
 function loadBackgroundImage() {
   // Detect if we're running on GitHub Pages or locally
   const isGitHubPages = window.location.hostname === 'itsecretary-map.github.io' || 
-                       window.location.pathname.includes('/chromecast_stream/');
+                       window.location.pathname.includes('/masjid/');
   
   // Try multiple possible paths for the background image
   const possiblePaths = [
@@ -46,8 +46,8 @@ function loadBackgroundImage() {
   
   // Add GitHub Pages specific paths if needed
   if (isGitHubPages) {
-    possiblePaths.unshift('/chromecast_stream/CCA_5344-HDR.jpg');
-    possiblePaths.unshift('./chromecast_stream/CCA_5344-HDR.jpg');
+  possiblePaths.unshift('/masjid/CCA_5344-HDR.jpg');
+  possiblePaths.unshift('./masjid/CCA_5344-HDR.jpg');
   }
   
   console.log('🖼️  Attempting to load background image from multiple paths:', possiblePaths);
@@ -920,7 +920,7 @@ function renderQrCodes() {
             `./images/qr-codes/${imageFileName}`,
             `images/qr-codes/${imageFileName}`
           ] : [
-            `/chromecast_stream/images/qr-codes/${imageFileName}`,
+            `/masjid/images/qr-codes/${imageFileName}`,
             `./images/qr-codes/${imageFileName}`
           ];
           

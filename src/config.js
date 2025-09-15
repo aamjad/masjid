@@ -14,7 +14,7 @@ export function getImagePath(imageName) {
   );
   
   if (isGitHubPages) {
-    return `/chromecast_stream/images/slideshow/${imageName}`;
+  return `/masjid/images/slideshow/${imageName}`;
   }
   return `./images/slideshow/${imageName}`;
 }
@@ -26,7 +26,7 @@ export function getQrImagePath(imageName) {
   );
   
   if (isGitHubPages) {
-    return `/chromecast_stream/images/qr-codes/${imageName}`;
+  return `/masjid/images/qr-codes/${imageName}`;
   }
   return `./images/qr-codes/${imageName}`;
 }
@@ -103,7 +103,7 @@ export function getQrImageUrls() {
   // More robust GitHub Pages detection
   const isGitHubPages = typeof window !== 'undefined' && (
     window.location.hostname === 'itsecretary-map.github.io' ||
-    window.location.pathname.includes('/chromecast_stream/') ||
+  window.location.pathname.includes('/masjid/') ||
     window.location.href.includes('github.io')
   );
   
@@ -116,8 +116,8 @@ export function getQrImageUrls() {
   
   if (isGitHubPages) {
     return {
-      mapWebsite: '/chromecast_stream/images/qr-codes/mapitt.png',
-      communityWhatsApp: '/chromecast_stream/images/qr-codes/whatsapp_group.png',
+  mapWebsite: '/masjid/images/qr-codes/mapitt.png',
+  communityWhatsApp: '/masjid/images/qr-codes/whatsapp_group.png',
     };
   }
   return {
@@ -133,7 +133,7 @@ export const qrImageLabels = {
 
 export const githubConfig = {
   owner: 'itsecretary-map', // Repository owner
-  repo: 'chromecast_stream',
+  repo: 'masjid',
   folder: 'images/slideshow', // Slideshow images folder
   enabled: true
 };

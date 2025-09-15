@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  base: '/chromecast_stream/', // Required for GitHub Pages deployment
+  base: '/masjid/', // Required for GitHub Pages deployment
   server: {
     open: true, // Automatically open the app in the browser
     host: true, // Allow access from network devices (for Chromecast testing)
