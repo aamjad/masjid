@@ -276,5 +276,25 @@
     }
   </script>
   -->
+  <script>
+  // Mobile-only DOM reordering for better UX
+  function reorderForMobile() {
+    if (window.innerWidth <= 600) {
+      const contentRow = document.querySelector('.content-row');
+      if (!contentRow) return;
+      const slideshow = contentRow.querySelector('.slideshow');
+      const prayerTimes = contentRow.querySelector('.prayer-times');
+      const qrCodes = contentRow.querySelector('.qr-codes');
+      // Remove all children
+      while (contentRow.firstChild) contentRow.removeChild(contentRow.firstChild);
+      // Append in mobile order: slideshow, prayer, qr
+      if (slideshow) contentRow.appendChild(slideshow);
+      if (prayerTimes) contentRow.appendChild(prayerTimes);
+      if (qrCodes) contentRow.appendChild(qrCodes);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', reorderForMobile);
+  window.addEventListener('resize', reorderForMobile);
+  </script>
 </body>
 </html>

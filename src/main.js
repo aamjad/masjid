@@ -588,7 +588,12 @@ function showImage(idx) {
   if (errorMsg) errorMsg.remove();
   
   setTimeout(() => {
-    const imageUrl = availableImages[idx];
+    let imageUrl = availableImages[idx];
+    // Add cache-busting query param for mobile
+    if (window.innerWidth <= 600) {
+      const ts = Date.now();
+      imageUrl += (imageUrl.includes('?') ? '&' : '?') + 'cb=' + ts;
+    }
     console.log('Setting image src to:', imageUrl);
     imgEl.src = imageUrl;
     imgEl.onload = () => { 
