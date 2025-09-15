@@ -7,7 +7,8 @@ import {
   ayatHadithList,
   getQrImageUrls,
   qrImageLabels, 
-  githubConfig 
+  githubConfig,
+  getSlideshowImageList // <-- import new function
 } from './config.js';
 
 // === VIEWPORT LOCKING FOR TV DISPLAYS ===
@@ -724,15 +725,8 @@ setInterval(nextImage, 8000); // 8 seconds
 
 // Function to get fallback images with correct paths for current environment
 function getFallbackImages() {
-  return [
-    getImagePath('imam_schedule.jpg'),
-    getImagePath('sundayschool.jpg'),
-    getImagePath('fall retreat.jpg'),
-    getImagePath('hajj dinner.jpg'),
-    getImagePath('membership drive.jpg'),
-    getImagePath('ping pong.jpg'),
-    getImagePath('winter fundraiser.jpg')
-  ];
+  // Use dynamic list from config.js
+  return getSlideshowImageList().map(name => getImagePath(name));
 }
 
 
