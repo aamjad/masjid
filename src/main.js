@@ -730,8 +730,8 @@ setInterval(nextImage, 8000); // 8 seconds
 
 // Function to get fallback images with correct paths for current environment
 function getFallbackImages() {
-  // Use dynamic list from config.js
-  return getSlideshowImageList().map(name => getImagePath(name));
+  // Use dynamic list from config.js (already URLs)
+  return getSlideshowImageList();
 }
 
 
